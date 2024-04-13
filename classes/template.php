@@ -315,7 +315,7 @@ class template {
             }
 
             // Remove full-stop at the end, if it exists, to avoid "..pdf" being created and being filtered by clean_filename.
-            $filename = rtrim(format_string($this->name, true, ['context' => $this->get_context()]), '.');
+            $filename = rtrim(format_string(fullname($user) . '_' . $this->name, true, ['context' => $this->get_context()]), '.');
 
             $pdf->setPrintHeader(false);
             $pdf->setPrintFooter(false);
